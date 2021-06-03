@@ -71,10 +71,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
               color: Colors.black,
             ),
             StreamBuilder<List<GcomponentsRecord>>(
-              stream: queryGcomponentsRecord(
-                queryBuilder: (gcomponentsRecord) =>
-                    gcomponentsRecord.orderBy('created_at', descending: true),
-              ),
+              stream: queryGcomponentsRecord(),
               builder: (context, snapshot) {
                 // Customize what your widget looks like when it's loading.
                 if (!snapshot.hasData) {
@@ -193,10 +190,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
               color: Colors.black,
             ),
             StreamBuilder<List<TcomponentsRecord>>(
-              stream: queryTcomponentsRecord(
-                queryBuilder: (tcomponentsRecord) =>
-                    tcomponentsRecord.orderBy('created_at', descending: true),
-              ),
+              stream: queryTcomponentsRecord(),
               builder: (context, snapshot) {
                 // Customize what your widget looks like when it's loading.
                 if (!snapshot.hasData) {
