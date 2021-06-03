@@ -223,11 +223,13 @@ class _BuildWorkoutWidgetState extends State<BuildWorkoutWidget> {
                         onPressed: () async {
                           final name = nameInput1Controller.text;
                           final url = uRLinput1Controller.text;
+                          final createdAt = getCurrentTimestamp;
 
                           final gcomponentsRecordData =
                               createGcomponentsRecordData(
                             name: name,
                             url: url,
+                            createdAt: createdAt,
                           );
 
                           await GcomponentsRecord.collection
@@ -435,11 +437,13 @@ class _BuildWorkoutWidgetState extends State<BuildWorkoutWidget> {
                         onPressed: () async {
                           final name = nameInput2Controller.text;
                           final url = uRLinput2Controller.text;
+                          final createdAt = getCurrentTimestamp;
 
                           final tcomponentsRecordData =
                               createTcomponentsRecordData(
                             name: name,
                             url: url,
+                            createdAt: createdAt,
                           );
 
                           await TcomponentsRecord.collection
