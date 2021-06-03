@@ -16,19 +16,19 @@ class BuildWorkoutWidget extends StatefulWidget {
 }
 
 class _BuildWorkoutWidgetState extends State<BuildWorkoutWidget> {
-  TextEditingController textController1;
-  TextEditingController textController2;
-  TextEditingController textController3;
-  TextEditingController textController4;
+  TextEditingController nameInput1Controller;
+  TextEditingController uRLinput1Controller;
+  TextEditingController nameInput2Controller;
+  TextEditingController uRLinput2Controller;
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    textController1 = TextEditingController();
-    textController2 = TextEditingController();
-    textController3 = TextEditingController();
-    textController4 = TextEditingController();
+    nameInput1Controller = TextEditingController();
+    uRLinput1Controller = TextEditingController();
+    nameInput2Controller = TextEditingController();
+    uRLinput2Controller = TextEditingController();
   }
 
   @override
@@ -96,7 +96,7 @@ class _BuildWorkoutWidgetState extends State<BuildWorkoutWidget> {
                             child: Padding(
                               padding: EdgeInsets.fromLTRB(16, 0, 0, 0),
                               child: TextFormField(
-                                controller: textController1,
+                                controller: nameInput1Controller,
                                 obscureText: false,
                                 decoration: InputDecoration(
                                   labelText: 'Name',
@@ -165,7 +165,7 @@ class _BuildWorkoutWidgetState extends State<BuildWorkoutWidget> {
                             child: Padding(
                               padding: EdgeInsets.fromLTRB(16, 0, 0, 0),
                               child: TextFormField(
-                                controller: textController2,
+                                controller: uRLinput1Controller,
                                 obscureText: false,
                                 decoration: InputDecoration(
                                   labelText: 'Url',
@@ -221,8 +221,8 @@ class _BuildWorkoutWidgetState extends State<BuildWorkoutWidget> {
                       padding: EdgeInsets.fromLTRB(0, 16, 0, 0),
                       child: FFButtonWidget(
                         onPressed: () async {
-                          final name = textController3.text;
-                          final url = textController4.text;
+                          final name = nameInput1Controller.text;
+                          final url = uRLinput1Controller.text;
 
                           final gcomponentsRecordData =
                               createGcomponentsRecordData(
@@ -308,7 +308,7 @@ class _BuildWorkoutWidgetState extends State<BuildWorkoutWidget> {
                             child: Padding(
                               padding: EdgeInsets.fromLTRB(16, 0, 0, 0),
                               child: TextFormField(
-                                controller: textController3,
+                                controller: nameInput2Controller,
                                 obscureText: false,
                                 decoration: InputDecoration(
                                   labelText: 'Name',
@@ -377,7 +377,7 @@ class _BuildWorkoutWidgetState extends State<BuildWorkoutWidget> {
                             child: Padding(
                               padding: EdgeInsets.fromLTRB(16, 0, 0, 0),
                               child: TextFormField(
-                                controller: textController4,
+                                controller: uRLinput2Controller,
                                 obscureText: false,
                                 decoration: InputDecoration(
                                   labelText: 'Url',
@@ -433,8 +433,8 @@ class _BuildWorkoutWidgetState extends State<BuildWorkoutWidget> {
                       padding: EdgeInsets.fromLTRB(0, 16, 0, 0),
                       child: FFButtonWidget(
                         onPressed: () async {
-                          final name = textController3.text;
-                          final url = textController4.text;
+                          final name = nameInput2Controller.text;
+                          final url = uRLinput2Controller.text;
 
                           final tcomponentsRecordData =
                               createTcomponentsRecordData(
