@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "404066997399",
+    "project_id": "workouts-76617",
+    "storage_bucket": "workouts-76617.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:404066997399:android:9a07c6aa5e07f0f29f05d2",
+        "android_client_info": {
+          "package_name": "com.flutterflow.workouts"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "404066997399-mkru4ujar0rtf7f1emdrosie9drqm7io.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCSXqwk-z92DFdyrJ2Yiu4e3FZcDjFRf5w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "404066997399-mkru4ujar0rtf7f1emdrosie9drqm7io.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
