@@ -1,4 +1,5 @@
 import '../flutter_flow/flutter_flow_theme.dart';
+import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -13,6 +14,7 @@ class LoginWidget extends StatefulWidget {
 class _LoginWidgetState extends State<LoginWidget> {
   TextEditingController emailTextController;
   TextEditingController passwordTextController;
+  bool passwordVisibility;
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -20,6 +22,7 @@ class _LoginWidgetState extends State<LoginWidget> {
     super.initState();
     emailTextController = TextEditingController();
     passwordTextController = TextEditingController();
+    passwordVisibility = false;
   }
 
   @override
@@ -75,7 +78,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                 ),
                                 enabledBorder: UnderlineInputBorder(
                                   borderSide: BorderSide(
-                                    color: Colors.transparent,
+                                    color: Color(0x00000000),
                                     width: 1,
                                   ),
                                   borderRadius: const BorderRadius.only(
@@ -85,7 +88,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                 ),
                                 focusedBorder: UnderlineInputBorder(
                                   borderSide: BorderSide(
-                                    color: Colors.transparent,
+                                    color: Color(0x00000000),
                                     width: 1,
                                   ),
                                   borderRadius: const BorderRadius.only(
@@ -116,7 +119,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                             padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
                             child: TextFormField(
                               controller: passwordTextController,
-                              obscureText: true,
+                              obscureText: !passwordVisibility,
                               decoration: InputDecoration(
                                 hintText: 'Password',
                                 hintStyle: GoogleFonts.getFont(
@@ -126,7 +129,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                 ),
                                 enabledBorder: UnderlineInputBorder(
                                   borderSide: BorderSide(
-                                    color: Colors.transparent,
+                                    color: Color(0x00000000),
                                     width: 1,
                                   ),
                                   borderRadius: const BorderRadius.only(
@@ -136,12 +139,24 @@ class _LoginWidgetState extends State<LoginWidget> {
                                 ),
                                 focusedBorder: UnderlineInputBorder(
                                   borderSide: BorderSide(
-                                    color: Colors.transparent,
+                                    color: Color(0x00000000),
                                     width: 1,
                                   ),
                                   borderRadius: const BorderRadius.only(
                                     topLeft: Radius.circular(4.0),
                                     topRight: Radius.circular(4.0),
+                                  ),
+                                ),
+                                suffixIcon: InkWell(
+                                  onTap: () => setState(
+                                    () => passwordVisibility =
+                                        !passwordVisibility,
+                                  ),
+                                  child: Icon(
+                                    passwordVisibility
+                                        ? Icons.visibility_outlined
+                                        : Icons.visibility_off_outlined,
+                                    size: 22,
                                   ),
                                 ),
                               ),

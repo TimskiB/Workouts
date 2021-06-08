@@ -116,7 +116,7 @@ class _BuildWorkoutWidgetState extends State<BuildWorkoutWidget> {
                                     ),
                                     enabledBorder: UnderlineInputBorder(
                                       borderSide: BorderSide(
-                                        color: Colors.transparent,
+                                        color: Color(0x00000000),
                                         width: 1,
                                       ),
                                       borderRadius: const BorderRadius.only(
@@ -126,7 +126,7 @@ class _BuildWorkoutWidgetState extends State<BuildWorkoutWidget> {
                                     ),
                                     focusedBorder: UnderlineInputBorder(
                                       borderSide: BorderSide(
-                                        color: Colors.transparent,
+                                        color: Color(0x00000000),
                                         width: 1,
                                       ),
                                       borderRadius: const BorderRadius.only(
@@ -185,7 +185,7 @@ class _BuildWorkoutWidgetState extends State<BuildWorkoutWidget> {
                                     ),
                                     enabledBorder: UnderlineInputBorder(
                                       borderSide: BorderSide(
-                                        color: Colors.transparent,
+                                        color: Color(0x00000000),
                                         width: 1,
                                       ),
                                       borderRadius: const BorderRadius.only(
@@ -195,7 +195,7 @@ class _BuildWorkoutWidgetState extends State<BuildWorkoutWidget> {
                                     ),
                                     focusedBorder: UnderlineInputBorder(
                                       borderSide: BorderSide(
-                                        color: Colors.transparent,
+                                        color: Color(0x00000000),
                                         width: 1,
                                       ),
                                       borderRadius: const BorderRadius.only(
@@ -330,7 +330,7 @@ class _BuildWorkoutWidgetState extends State<BuildWorkoutWidget> {
                                     ),
                                     enabledBorder: UnderlineInputBorder(
                                       borderSide: BorderSide(
-                                        color: Colors.transparent,
+                                        color: Color(0x00000000),
                                         width: 1,
                                       ),
                                       borderRadius: const BorderRadius.only(
@@ -340,7 +340,7 @@ class _BuildWorkoutWidgetState extends State<BuildWorkoutWidget> {
                                     ),
                                     focusedBorder: UnderlineInputBorder(
                                       borderSide: BorderSide(
-                                        color: Colors.transparent,
+                                        color: Color(0x00000000),
                                         width: 1,
                                       ),
                                       borderRadius: const BorderRadius.only(
@@ -399,7 +399,7 @@ class _BuildWorkoutWidgetState extends State<BuildWorkoutWidget> {
                                     ),
                                     enabledBorder: UnderlineInputBorder(
                                       borderSide: BorderSide(
-                                        color: Colors.transparent,
+                                        color: Color(0x00000000),
                                         width: 1,
                                       ),
                                       borderRadius: const BorderRadius.only(
@@ -409,7 +409,7 @@ class _BuildWorkoutWidgetState extends State<BuildWorkoutWidget> {
                                     ),
                                     focusedBorder: UnderlineInputBorder(
                                       borderSide: BorderSide(
-                                        color: Colors.transparent,
+                                        color: Color(0x00000000),
                                         width: 1,
                                       ),
                                       borderRadius: const BorderRadius.only(
