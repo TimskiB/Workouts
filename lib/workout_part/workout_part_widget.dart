@@ -1,6 +1,6 @@
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
-import '../flutter_flow/flutter_flow_video_player.dart';
+import '../flutter_flow/flutter_flow_youtube_player.dart';
 import '../home_page/home_page_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -66,14 +66,13 @@ class _WorkoutPartWidgetState extends State<WorkoutPartWidget> {
           mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            FlutterFlowVideoPlayer(
-              path: widget.url,
-              videoType: VideoType.network,
+            FlutterFlowYoutubePlayer(
+              url: widget.url,
               autoPlay: false,
               looping: false,
+              mute: false,
               showControls: true,
-              allowFullScreen: true,
-              allowPlaybackSpeedMenu: true,
+              showFullScreen: true,
             )
           ],
         ),
