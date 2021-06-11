@@ -17,10 +17,10 @@ abstract class GcomponentsRecord
   String get name;
 
   @nullable
-  String get url;
+  bool get completed;
 
   @nullable
-  bool get completed;
+  String get url;
 
   @nullable
   @BuiltValueField(wireName: kDocumentReferenceField)
@@ -28,8 +28,8 @@ abstract class GcomponentsRecord
 
   static void _initializeBuilder(GcomponentsRecordBuilder builder) => builder
     ..name = ''
-    ..url = ''
-    ..completed = false;
+    ..completed = false
+    ..url = '';
 
   static CollectionReference get collection =>
       FirebaseFirestore.instance.collection('Gcomponents');
@@ -45,21 +45,21 @@ abstract class GcomponentsRecord
 
 Map<String, dynamic> createGcomponentsRecordData({
   String name,
-  String url,
   bool completed,
+  String url,
 }) =>
     serializers.serializeWith(
         GcomponentsRecord.serializer,
         GcomponentsRecord((g) => g
           ..name = name
-          ..url = url
-          ..completed = completed));
+          ..completed = completed
+          ..url = url));
 
 GcomponentsRecord get dummyGcomponentsRecord {
   final builder = GcomponentsRecordBuilder()
     ..name = dummyString
-    ..url = dummyString
-    ..completed = dummyBoolean;
+    ..completed = dummyBoolean
+    ..url = dummyVideoPath;
   return builder.build();
 }
 
