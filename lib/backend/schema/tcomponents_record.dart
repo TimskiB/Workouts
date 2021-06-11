@@ -20,8 +20,7 @@ abstract class TcomponentsRecord
   String get url;
 
   @nullable
-  @BuiltValueField(wireName: 'created_at')
-  Timestamp get createdAt;
+  bool get completed;
 
   @nullable
   @BuiltValueField(wireName: kDocumentReferenceField)
@@ -29,7 +28,8 @@ abstract class TcomponentsRecord
 
   static void _initializeBuilder(TcomponentsRecordBuilder builder) => builder
     ..name = ''
-    ..url = '';
+    ..url = ''
+    ..completed = false;
 
   static CollectionReference get collection =>
       FirebaseFirestore.instance.collection('Tcomponents');
@@ -46,20 +46,20 @@ abstract class TcomponentsRecord
 Map<String, dynamic> createTcomponentsRecordData({
   String name,
   String url,
-  Timestamp createdAt,
+  bool completed,
 }) =>
     serializers.serializeWith(
         TcomponentsRecord.serializer,
         TcomponentsRecord((t) => t
           ..name = name
           ..url = url
-          ..createdAt = createdAt));
+          ..completed = completed));
 
 TcomponentsRecord get dummyTcomponentsRecord {
   final builder = TcomponentsRecordBuilder()
     ..name = dummyString
-    ..url = dummyVideoPath
-    ..createdAt = dummyTimestamp;
+    ..url = dummyString
+    ..completed = dummyBoolean;
   return builder.build();
 }
 

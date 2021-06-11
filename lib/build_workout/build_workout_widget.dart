@@ -7,6 +7,7 @@ import '../home_page/home_page_widget.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:page_transition/page_transition.dart';
 
 class BuildWorkoutWidget extends StatefulWidget {
   BuildWorkoutWidget({Key key}) : super(key: key);
@@ -40,7 +41,7 @@ class _BuildWorkoutWidgetState extends State<BuildWorkoutWidget> {
         automaticallyImplyLeading: true,
         title: Text(
           'Build Your Workout',
-          style: FlutterFlowTheme.title3.override(
+          style: FlutterFlowTheme.title1.override(
             fontFamily: 'Poppins',
           ),
         ),
@@ -224,13 +225,13 @@ class _BuildWorkoutWidgetState extends State<BuildWorkoutWidget> {
                           onPressed: () async {
                             final name = nameInput1Controller.text;
                             final url = uRLinput1Controller.text;
-                            final createdAt = getCurrentTimestamp;
+                            final completed = false;
 
                             final gcomponentsRecordData =
                                 createGcomponentsRecordData(
                               name: name,
                               url: url,
-                              createdAt: createdAt,
+                              completed: completed,
                             );
 
                             await GcomponentsRecord.collection
@@ -238,8 +239,11 @@ class _BuildWorkoutWidgetState extends State<BuildWorkoutWidget> {
                                 .set(gcomponentsRecordData);
                             await Navigator.pushAndRemoveUntil(
                               context,
-                              MaterialPageRoute(
-                                builder: (context) => HomePageWidget(),
+                              PageTransition(
+                                type: PageTransitionType.bottomToTop,
+                                duration: Duration(milliseconds: 500),
+                                reverseDuration: Duration(milliseconds: 500),
+                                child: HomePageWidget(),
                               ),
                               (r) => false,
                             );
@@ -438,13 +442,13 @@ class _BuildWorkoutWidgetState extends State<BuildWorkoutWidget> {
                           onPressed: () async {
                             final name = nameInput2Controller.text;
                             final url = uRLinput2Controller.text;
-                            final createdAt = getCurrentTimestamp;
+                            final completed = false;
 
                             final tcomponentsRecordData =
                                 createTcomponentsRecordData(
                               name: name,
                               url: url,
-                              createdAt: createdAt,
+                              completed: completed,
                             );
 
                             await TcomponentsRecord.collection
@@ -452,8 +456,11 @@ class _BuildWorkoutWidgetState extends State<BuildWorkoutWidget> {
                                 .set(tcomponentsRecordData);
                             await Navigator.pushAndRemoveUntil(
                               context,
-                              MaterialPageRoute(
-                                builder: (context) => HomePageWidget(),
+                              PageTransition(
+                                type: PageTransitionType.bottomToTop,
+                                duration: Duration(milliseconds: 500),
+                                reverseDuration: Duration(milliseconds: 500),
+                                child: HomePageWidget(),
                               ),
                               (r) => false,
                             );
@@ -462,7 +469,7 @@ class _BuildWorkoutWidgetState extends State<BuildWorkoutWidget> {
                           options: FFButtonOptions(
                             width: 100,
                             height: 40,
-                            color: Color(0xFF9575CD),
+                            color: FlutterFlowTheme.secondaryColor,
                             textStyle: FlutterFlowTheme.subtitle2.override(
                               fontFamily: 'Montserrat',
                               color: Colors.white,

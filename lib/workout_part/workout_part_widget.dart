@@ -1,8 +1,10 @@
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
-import '../flutter_flow/flutter_flow_youtube_player.dart';
+import '../flutter_flow/flutter_flow_web_view.dart';
+import '../home_page/home_page_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:page_transition/page_transition.dart';
 
 class WorkoutPartWidget extends StatefulWidget {
   WorkoutPartWidget({
@@ -27,7 +29,7 @@ class _WorkoutPartWidgetState extends State<WorkoutPartWidget> {
       key: scaffoldKey,
       appBar: AppBar(
         backgroundColor: FlutterFlowTheme.primaryColor,
-        automaticallyImplyLeading: true,
+        automaticallyImplyLeading: false,
         title: Text(
           widget.name,
           style: FlutterFlowTheme.title2.override(
@@ -38,21 +40,33 @@ class _WorkoutPartWidgetState extends State<WorkoutPartWidget> {
         centerTitle: true,
         elevation: 5,
       ),
-      body: SafeArea(
-        child: Align(
-          alignment: Alignment(0, 0),
-          child: Padding(
-            padding: EdgeInsets.fromLTRB(15, 0, 15, 0),
-            child: FlutterFlowYoutubePlayer(
-              url: widget.url,
-              width: double.infinity,
-              height: double.infinity,
-              autoPlay: false,
-              looping: true,
-              mute: false,
-              showControls: true,
+      floatingActionButton: FloatingActionButton.extended(
+        onPressed: () async {
+          await Navigator.pushAndRemoveUntil(
+            context,
+            PageTransition(
+              type: PageTransitionType.rightToLeft,
+              duration: Duration(milliseconds: 500),
+              reverseDuration: Duration(milliseconds: 500),
+              child: HomePageWidget(),
             ),
-          ),
+            (r) => false,
+          );
+        },
+        backgroundColor: Colors.green,
+        elevation: 10,
+        label: Icon(
+          Icons.check_sharp,
+          color: Colors.black,
+          size: 30,
+        ),
+      ),
+      body: SafeArea(
+        child: FlutterFlowWebView(
+          url: 'https://flutter.dev',
+          bypass: false,
+          verticalScroll: false,
+          horizontalScroll: false,
         ),
       ),
     );
