@@ -240,7 +240,7 @@ class _BuildWorkoutWidgetState extends State<BuildWorkoutWidget> {
                             await Navigator.pushAndRemoveUntil(
                               context,
                               PageTransition(
-                                type: PageTransitionType.bottomToTop,
+                                type: PageTransitionType.topToBottom,
                                 duration: Duration(milliseconds: 500),
                                 reverseDuration: Duration(milliseconds: 500),
                                 child: HomePageWidget(),
@@ -457,7 +457,7 @@ class _BuildWorkoutWidgetState extends State<BuildWorkoutWidget> {
                             await Navigator.pushAndRemoveUntil(
                               context,
                               PageTransition(
-                                type: PageTransitionType.bottomToTop,
+                                type: PageTransitionType.topToBottom,
                                 duration: Duration(milliseconds: 500),
                                 reverseDuration: Duration(milliseconds: 500),
                                 child: HomePageWidget(),

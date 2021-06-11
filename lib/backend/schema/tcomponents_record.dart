@@ -17,10 +17,10 @@ abstract class TcomponentsRecord
   String get name;
 
   @nullable
-  String get url;
+  bool get completed;
 
   @nullable
-  bool get completed;
+  String get url;
 
   @nullable
   @BuiltValueField(wireName: kDocumentReferenceField)
@@ -28,8 +28,8 @@ abstract class TcomponentsRecord
 
   static void _initializeBuilder(TcomponentsRecordBuilder builder) => builder
     ..name = ''
-    ..url = ''
-    ..completed = false;
+    ..completed = false
+    ..url = '';
 
   static CollectionReference get collection =>
       FirebaseFirestore.instance.collection('Tcomponents');
@@ -45,21 +45,21 @@ abstract class TcomponentsRecord
 
 Map<String, dynamic> createTcomponentsRecordData({
   String name,
-  String url,
   bool completed,
+  String url,
 }) =>
     serializers.serializeWith(
         TcomponentsRecord.serializer,
         TcomponentsRecord((t) => t
           ..name = name
-          ..url = url
-          ..completed = completed));
+          ..completed = completed
+          ..url = url));
 
 TcomponentsRecord get dummyTcomponentsRecord {
   final builder = TcomponentsRecordBuilder()
     ..name = dummyString
-    ..url = dummyString
-    ..completed = dummyBoolean;
+    ..completed = dummyBoolean
+    ..url = dummyVideoPath;
   return builder.build();
 }
 

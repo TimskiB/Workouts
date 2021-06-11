@@ -1,6 +1,6 @@
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
-import '../flutter_flow/flutter_flow_web_view.dart';
+import '../flutter_flow/flutter_flow_video_player.dart';
 import '../home_page/home_page_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -45,7 +45,7 @@ class _WorkoutPartWidgetState extends State<WorkoutPartWidget> {
           await Navigator.pushAndRemoveUntil(
             context,
             PageTransition(
-              type: PageTransitionType.rightToLeft,
+              type: PageTransitionType.leftToRight,
               duration: Duration(milliseconds: 500),
               reverseDuration: Duration(milliseconds: 500),
               child: HomePageWidget(),
@@ -62,11 +62,20 @@ class _WorkoutPartWidgetState extends State<WorkoutPartWidget> {
         ),
       ),
       body: SafeArea(
-        child: FlutterFlowWebView(
-          url: 'https://flutter.dev',
-          bypass: false,
-          verticalScroll: true,
-          horizontalScroll: false,
+        child: Column(
+          mainAxisSize: MainAxisSize.max,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            FlutterFlowVideoPlayer(
+              path: widget.url,
+              videoType: VideoType.network,
+              autoPlay: false,
+              looping: false,
+              showControls: true,
+              allowFullScreen: true,
+              allowPlaybackSpeedMenu: true,
+            )
+          ],
         ),
       ),
     );
