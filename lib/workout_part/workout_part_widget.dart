@@ -65,7 +65,7 @@ class _WorkoutPartWidgetState extends State<WorkoutPartWidget> {
         child: FlutterFlowWebView(
           url: 'https://flutter.dev',
           bypass: false,
-          verticalScroll: false,
+          verticalScroll: true,
           horizontalScroll: false,
         ),
       ),
